@@ -8,6 +8,7 @@
         "type": "git",
         "url": "https://github.com/lokshunhung/prettier-plugin-tsconfig.git"
     },
+    "main": "dist/index.js",
     "scripts": {
         "clean": "rimraf dist/ tmp/",
         "codegen": "npm-run-all generate-json aggregate-json",
@@ -17,7 +18,11 @@
         "dev": "yarn run compile --watch",
         "lint": "eslint --ext .js,.ts .",
         "format": "prettier --write \"**/*.{js,json,md,ts}\"",
+        "check-types": "tsc --noErrorTruncation",
         "release": "standard-version"
+    },
+    "dependencies": {
+        "@babel/types": "^7.11.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.10.5",
