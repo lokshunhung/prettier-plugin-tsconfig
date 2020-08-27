@@ -10,7 +10,9 @@
     },
     "scripts": {
         "clean": "rimraf dist/ tmp/",
+        "codegen": "npm-run-all generate-json aggregate-json",
         "generate-json": "node tools generate-json",
+        "aggregate-json": "node tools aggregate-json",
         "compile": "babel src --out-dir dist --extensions .ts --config-file ./.babelrc.js",
         "dev": "yarn run compile --watch",
         "lint": "eslint --ext .js,.ts .",
