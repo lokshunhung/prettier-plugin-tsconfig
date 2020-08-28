@@ -18,8 +18,10 @@
         "dev": "yarn run compile --watch",
         "lint": "eslint --ext .js,.ts .",
         "format": "prettier --write \"**/*.{js,json,md,ts}\"",
+        "check-format": "prettier --list-different \"**/*.{js,json,md,ts}\"",
         "check-types": "tsc --noErrorTruncation",
         "test": "jest",
+        "build": "npm-run-all clean codegen check-* lint test compile",
         "release": "standard-version"
     },
     "dependencies": {
@@ -46,6 +48,7 @@
         "jest": "^26.4.2",
         "linguist-languages": "^7.10.0",
         "lint-staged": "^10.2.13",
+        "npm-run-all": "^4.1.5",
         "prettier": "^2.1.1",
         "rimraf": "^3.0.2",
         "standard-version": "^9.0.0",
