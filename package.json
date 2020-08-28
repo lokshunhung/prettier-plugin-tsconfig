@@ -24,6 +24,9 @@
         "build": "npm-run-all clean codegen check-* lint test compile",
         "release": "standard-version"
     },
+    "peerDependencies": {
+        "prettier": "^2.0.0"
+    },
     "dependencies": {
         "@babel/types": "^7.11.0"
     },
